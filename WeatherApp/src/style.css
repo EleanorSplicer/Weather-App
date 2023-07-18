@@ -1,0 +1,69 @@
+body {
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/089/122/original/kaileen-fitzpatrick-tfqrqGH7S9A-unsplash.jpg?1689007332");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: "EB Garamond", serif;
+  font-family: "Quicksand", sans-serif;
+}
+footer {
+  color: white;
+  text-align: center;
+}
+
+.container {
+  font-size: medium;
+  font-weight: 700;
+  font-family: "EB Garamond", serif;
+  font-family: "Quicksand", sans-serif;
+}
+hr {
+  margin: 12px;
+}
+.current {
+  padding: auto;
+}
+.btn-primary {
+  background: black;
+  color: white;
+  border-color: black;
+}
+.btn-primary:hover {
+  background: white;
+  color: black;
+  border-color: black;
+}
+#current-button {
+  background: black;
+  color: white;
+  border-color: black;
+  margin: 5px;
+  padding: 6px 12px;
+  border-radius: 10px;
+}
+#current-button:hover {
+  background: white;
+  color: black;
+  border-color: black;
+}
+.weather-app {
+  background-color: #77b9db;
+  border: 1px solid black;
+  padding: 15px;
+  margin: 15px auto;
+  max-width: 600px;
+  border-radius: 10px;
+}
+
+.week {
+  display: inline-flex;
+  padding-top: 5px;
+  text-align: center;
+  padding-left: 100px;
+  padding-right: 100px;
+  column-gap: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
