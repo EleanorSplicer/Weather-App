@@ -67,7 +67,7 @@ hr {
   padding-left: 20px;
   padding-right: 20px;
 }
-.col.degrees {
+.container.degrees {
   position: relative;
   font-size: 16px;
   top: -34px;
