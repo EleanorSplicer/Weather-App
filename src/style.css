@@ -32,18 +32,21 @@ li:first-letter {
   font-family: "EB Garamond", serif;
   font-family: "Quicksand", sans-serif;
 }
-.f-link {
+.f-link a {
   position: relative;
   font-size: 16px;
   top: -34px;
 }
-.c-link {
+.c-link a {
   position: relative;
   font-size: 16px;
   top: -34px;
 }
 hr {
   margin: 12px;
+}
+.showWeather.temperature.active:hover {
+  text-decoration: none;
 }
 .current {
   padding: auto;
