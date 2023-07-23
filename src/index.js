@@ -55,6 +55,11 @@ function showWeather(response) {
   let description = document.querySelector("#day-details");
   temperatureElement.innerHTML = `${temperature}`;
   description.innerHTML = response.data.weather[0].description;
+  let weatherIcons = document.querySelector("#weatherIcons");
+  weatherIcons.setAttribute =
+    ("src",
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/{${response.data.condition.icon}.png`);
+  weatherIcons.setAttribute = ("alt", response.data.condition.description);
 }
 
 function searchCity(city) {
