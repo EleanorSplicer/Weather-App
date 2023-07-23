@@ -31,32 +31,24 @@ function citySearch(event) {
 let form = document.querySelector("form");
 form.addEventListener("submit", citySearch);
 
-function displayFahrenheitTemperature(event) {
+function changeFahrenheit(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheiTemperature);
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let temp = document.querySelector("#temperature");
+  temp.innerHTML = Math.round(changeFahrenhiet);
 }
-
-function displayCelsiusTemperature(event) {
+function changeCelcius(event) {
   event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  let temperature = document.querySelector("#temperature");
+  let celsiusTemperature = (fahrenheitTemperature − 32) *× 5/9;
+  temperature.innerHTML = Math.round(changeCelsius);
 }
+let fahrenheitLink = document.querySelector("#f-link");
+fahrenheitLink.addEventListener("click", changeFahrenheit);
 
-let celsiusTemperature = null;
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
-
+let celciusLink = document.querySelector("#c-link");
+celciusLink.addEventListener("click", changeCelcius);
+let fahrenheitTemperature = null;
 function showWeather(response) {
   let cityElement = document.querySelector("#city");
   cityElement.innerHTML = response.data.name;
@@ -65,8 +57,9 @@ function showWeather(response) {
   let description = document.querySelector("#day-details");
   temperatureElement.innerHTML = `${temperature}`;
   description.innerHTML = response.data.weather[0].description;
+  
+   let fahrenheitTemperatureTemperature = response.data.main.temp;
 }
-
 function searchCity(city) {
   let apiKey = "f5e814a04eddfab1740f07bf0328eee2";
   let units = "imperial";
