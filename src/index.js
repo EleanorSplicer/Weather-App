@@ -79,3 +79,5 @@ function getPosition(event) {
 }
 let newButton = document.querySelector("#current-button");
 newButton.addEventListener("click", getPosition);
+
+search("Sedona");
