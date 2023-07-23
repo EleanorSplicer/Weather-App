@@ -48,7 +48,6 @@ fahrenheitLink.addEventListener("click", changeFahrenheit);
 
 let celciusLink = document.querySelector("#c-link");
 celciusLink.addEventListener("click", changeCelcius);
-let fahrenheitTemperature = null;
 
 function showWeather(response) {
   let cityElement = document.querySelector("#city");
