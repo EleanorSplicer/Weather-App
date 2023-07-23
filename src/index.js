@@ -53,14 +53,8 @@ function showWeather(response) {
   let temperature = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#temperature");
   let description = document.querySelector("#day-details");
-  let iconElement = document.querySelector("#icon");
   temperatureElement.innerHTML = `${temperature}`;
   description.innerHTML = response.data.weather[0].description;
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function searchCity(city) {
