@@ -42,9 +42,6 @@ hr {
   margin: 12px;
 }
 
-.showWeather .active:hover {
-  text-decoration: none;
-}
 .current {
   padding: auto;
 }
