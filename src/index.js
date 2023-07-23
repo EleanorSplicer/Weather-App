@@ -49,6 +49,7 @@ fahrenheitLink.addEventListener("click", changeFahrenheit);
 let celciusLink = document.querySelector("#c-link");
 celciusLink.addEventListener("click", changeCelcius);
 let fahrenheitTemperature = null;
+
 function showWeather(response) {
   let cityElement = document.querySelector("#city");
   cityElement.innerHTML = response.data.name;
@@ -57,8 +58,8 @@ function showWeather(response) {
   let description = document.querySelector("#day-details");
   temperatureElement.innerHTML = `${temperature}`;
   description.innerHTML = response.data.weather[0].description;
-
-  let fahrenheitTemperatureTemperature = response.data.main.temp;
+  let windElement = document.querySelector("#wind");
+  windElement.innerHTML = Math.round(response.data.wind.speed);
 }
 function searchCity(city) {
   let apiKey = "f5e814a04eddfab1740f07bf0328eee2";
