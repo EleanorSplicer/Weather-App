@@ -40,7 +40,7 @@ function changeFahrenheit(event) {
 function changeCelcius(event) {
   event.preventDefault();
   let temperature = document.querySelector("#temperature");
-  let celsiusTemperature = (fahrenheitTemperature − 32) *× 5/9;
+  let celsiusTemperature = ((fahrenheitTemperature - 32) * 5) / 9;
   temperature.innerHTML = Math.round(changeCelsius);
 }
 let fahrenheitLink = document.querySelector("#f-link");
@@ -57,8 +57,8 @@ function showWeather(response) {
   let description = document.querySelector("#day-details");
   temperatureElement.innerHTML = `${temperature}`;
   description.innerHTML = response.data.weather[0].description;
-  
-   let fahrenheitTemperatureTemperature = response.data.main.temp;
+
+  let fahrenheitTemperatureTemperature = response.data.main.temp;
 }
 function searchCity(city) {
   let apiKey = "f5e814a04eddfab1740f07bf0328eee2";
