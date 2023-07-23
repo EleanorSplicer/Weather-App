@@ -12,6 +12,10 @@ footer {
   color: white;
   text-align: center;
 }
+h2 {
+  font-size: 55px;
+}
+
 ul {
   margin: 10px;
   padding: 10px;
@@ -35,8 +39,8 @@ li:first-letter {
 .degreeUnits {
   position: relative;
   font-size: 16px;
-  top: -34px;
-  margin-left: 40px;
+  top: -84px;
+  margin-left: 180px;
 }
 
 hr {
@@ -87,4 +91,13 @@ hr {
   column-gap: 10px;
   padding-left: 20px;
   padding-right: 20px;
+}
+.weather-temperature img {
+  margin-right: 3px;
+
+  height: 64px;
+  width: 64px;
+}
+.temperature {
+  font-size: medium;
 }
