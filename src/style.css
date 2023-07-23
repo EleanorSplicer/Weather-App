@@ -45,7 +45,8 @@ li:first-letter {
 hr {
   margin: 12px;
 }
-.showWeather.temperature.active:hover {
+
+.weather-temperature .active:hover {
   text-decoration: none;
 }
 .current {
