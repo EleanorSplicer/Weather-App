@@ -32,12 +32,12 @@ li:first-letter {
   font-family: "EB Garamond", serif;
   font-family: "Quicksand", sans-serif;
 }
-.temperature.f-link {
+.f-link {
   position: relative;
   font-size: 16px;
   top: -34px;
 }
-temperature.c-link {
+.c-link {
   position: relative;
   font-size: 16px;
   top: -34px;
