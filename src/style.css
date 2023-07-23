@@ -19,12 +19,16 @@ footer {
   font-family: "EB Garamond", serif;
   font-family: "Quicksand", sans-serif;
 }
-.container.degrees {
+.temperature.f-link {
   position: relative;
   font-size: 16px;
   top: -34px;
 }
-
+temperature.c-link {
+  position: relative;
+  font-size: 16px;
+  top: -34px;
+}
 hr {
   margin: 12px;
 }
