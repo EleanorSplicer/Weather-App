@@ -32,7 +32,7 @@ li:first-letter {
   font-family: "EB Garamond", serif;
   font-family: "Quicksand", sans-serif;
 }
-.showWeather .degrees {
+.degreeUnits {
   position: relative;
   font-size: 16px;
   top: -34px;
