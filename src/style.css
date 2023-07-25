@@ -101,3 +101,11 @@ hr {
 .temperature {
   font-size: medium;
 }
+.showWeather .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+
+.showWeather .active:hover {
+  text-decoration: none;
+}

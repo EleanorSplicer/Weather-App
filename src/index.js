@@ -31,17 +31,17 @@ function citySearch(event) {
 let form = document.querySelector("form");
 form.addEventListener("submit", citySearch);
 
+let fahrenheitTemperature = null;
 function changeFahrenheit(event) {
   event.preventDefault();
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   let temp = document.querySelector("#temperature");
-  temp.innerHTML = Math.round(changeFahrenhiet);
+  temp.innerHTML = fahrenheitTemperature;
 }
 function changeCelcius(event) {
   event.preventDefault();
   let temperature = document.querySelector("#temperature");
   let celsiusTemperature = ((fahrenheitTemperature - 32) * 5) / 9;
-  temperature.innerHTML = Math.round(changeCelsius);
+  temperature.innerHTML = Math.round(celsiusTemperature);
 }
 let fahrenheitLink = document.querySelector("#f-link");
 fahrenheitLink.addEventListener("click", changeFahrenheit);
@@ -50,6 +50,7 @@ let celciusLink = document.querySelector("#c-link");
 celciusLink.addEventListener("click", changeCelcius);
 
 function showWeather(response) {
+  fahrenheitTemperature = Math.round(response.data.main.temp);
   let cityElement = document.querySelector("#city");
   cityElement.innerHTML = response.data.name;
   let temperature = Math.round(response.data.main.temp);
