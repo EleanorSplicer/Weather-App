@@ -24,21 +24,22 @@ let dateElement = document.querySelector("#current-date");
 dateElement.innerHTML = `${day} ${hours}:${minutes}`;
 
 function displayforecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Wed", "Thurs", "Fri", "Sat"];
-  days.forEach(function (day) {
+
+  days.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `
   
    
       <div class="col-2">
-        <div class="weather-forcast-date">${day}</div>
-        <img src=" https://openweathermap.org/img/wn/10d@2x.png" width="42" />
+        <div class="weather-forcast-date">${forecastDay.dt}</div>
+        <img src=" https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" width="42" />
         <div class="weather-forecast-temperatures">
-          <span class="weather-forecast-temperatures-max"> 92°</span>
-          <span class="weather-forecast-temperatures-min">89°</span>
+          <span class="weather-forecast-temperatures-max"> ${forecastDay.temp.max}°</span>
+          <span class="weather-forecast-temperatures-min">${forecastDay.temp.min}°</span>
         </div>
       </div>
    
@@ -107,7 +108,12 @@ function searchCity(city) {
 
   axios.get(apiUrl).then(showWeather);
 }
-
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "f5e814a04eddfab1740f07bf0328eee2";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(showWeather);
+}
 function showPosition(position) {
   let apiKey = "584d682057e027b9b963bc148ed9e2a2";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`;
@@ -115,7 +121,6 @@ function showPosition(position) {
   let longtitude = position.coords.longitude;
   axios.get(apiUrl).then(showWeather);
 }
-
 function getPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showPosition);
