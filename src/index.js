@@ -23,7 +23,7 @@ if (minutes < 10) {
 let dateElement = document.querySelector("#current-date");
 dateElement.innerHTML = `${day} ${hours}:${minutes}`;
 
-function displayforecast() {
+function displayforecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["Wed", "Thurs", "Fri", "Sat"];
@@ -48,7 +48,12 @@ function displayforecast() {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "cabdbda40038ba7d1165b953b1c7bd6c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 function citySearch(event) {
   event.preventDefault();
   let input = document.querySelector("#searchcity");
@@ -94,6 +99,7 @@ function showWeather(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
+
 function searchCity(city) {
   let apiKey = "f5e814a04eddfab1740f07bf0328eee2";
   let units = "imperial";
