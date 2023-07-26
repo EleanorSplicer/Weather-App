@@ -23,6 +23,32 @@ if (minutes < 10) {
 let dateElement = document.querySelector("#current-date");
 dateElement.innerHTML = `${day} ${hours}:${minutes}`;
 
+function displayforecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Wed", "Thurs", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+  
+   
+      <div class="col-2">
+        <div class="weather-forcast-date">${day}</div>
+        <img src=" https://openweathermap.org/img/wn/10d@2x.png" width="42" />
+        <div class="weather-forecast-temperatures">
+          <span class="weather-forecast-temperatures-max"> 92°</span>
+          <span class="weather-forecast-temperatures-min">89°</span>
+        </div>
+      </div>
+   
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function citySearch(event) {
   event.preventDefault();
   let input = document.querySelector("#searchcity");
@@ -92,3 +118,4 @@ let newButton = document.querySelector("#current-button");
 newButton.addEventListener("click", getPosition);
 
 searchCity("Sedona");
+displayforecast();
