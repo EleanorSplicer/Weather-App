@@ -109,8 +109,8 @@ hr {
 .showWeather .active:hover {
   text-decoration: none;
 }
-.week-forcast {
-  margin-top: 20px;
+.week-forecast {
+  margin-top: 5px;
   text-align: center;
   color: #000;
 }
@@ -120,7 +120,7 @@ hr {
   opacity: 0.5;
 }
 
-.weather-forecast-temperature-min {
+.weather-forecast-temperatures-min {
   opacity: 0.5;
 }
 
