@@ -35,7 +35,7 @@ function displayforecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
 
-  days.forEach(function (forecastDay, index) {
+  forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
       forecastHTML =
         forecastHTML +
@@ -109,6 +109,7 @@ function showWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
@@ -119,10 +120,9 @@ function searchCity(city) {
   axios.get(apiUrl).then(showWeather);
 }
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "f5e814a04eddfab1740f07bf0328eee2";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`;
-  axios.get(apiUrl).then(showWeather);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayforecast);
 }
 function showPosition(position) {
   let apiKey = "584d682057e027b9b963bc148ed9e2a2";
@@ -139,4 +139,3 @@ let newButton = document.querySelector("#current-button");
 newButton.addEventListener("click", getPosition);
 
 searchCity("Sedona");
-displayforecast();
