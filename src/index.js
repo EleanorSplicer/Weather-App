@@ -85,11 +85,6 @@ function changeCelcius(event) {
   let celsiusTemperature = ((fahrenheitTemperature - 32) * 5) / 9;
   temperature.innerHTML = Math.round(celsiusTemperature);
 }
-let fahrenheitLink = document.querySelector("#f-link");
-fahrenheitLink.addEventListener("click", changeFahrenheit);
-
-let celciusLink = document.querySelector("#c-link");
-celciusLink.addEventListener("click", changeCelcius);
 
 function showWeather(response) {
   fahrenheitTemperature = Math.round(response.data.main.temp);
